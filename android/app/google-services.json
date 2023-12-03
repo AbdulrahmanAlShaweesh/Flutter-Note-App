@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "129126588106",
+    "project_id": "note-nested",
+    "storage_bucket": "note-nested.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:129126588106:android:82f6267064f8743f441e33",
+        "android_client_info": {
+          "package_name": "com.example.note_nested"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCC1mIig17UVoJ_GsEF-y9lKZlSXBRsNUI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
