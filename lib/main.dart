@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:note_app/views/edit_note_Screen.dart';
 import 'package:note_app/views/home_screen.dart';
 
 void main() {
@@ -15,11 +16,12 @@ class FlutterNoteApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(
         brightness: Brightness.dark,
-        scaffoldBackgroundColor: Color.fromARGB(255, 38, 37, 37),
+        scaffoldBackgroundColor: const Color.fromARGB(255, 38, 37, 37),
       ),
       debugShowCheckedModeBanner: false,
       routes: {
         HomeScreen.id: (context) => const HomeScreen(),
+        EditNoteScreen.id: (context) => const EditNoteScreen(),
       },
       initialRoute: HomeScreen.id,
     );

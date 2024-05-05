@@ -5,12 +5,11 @@ class CustomTextField extends StatelessWidget {
   const CustomTextField({
     super.key,
     required this.hintText,
-    this.vertical,
+    this.maxline = 1,
   });
 
   final String hintText;
-  final double? vertical;
-
+  final int maxline;
   @override
   Widget build(BuildContext context) {
     return TextField(
@@ -19,6 +18,7 @@ class CustomTextField extends StatelessWidget {
         enabledBorder: buildBorder(),
         focusedBorder: buildBorder(KPcolor),
       ),
+      maxLines: maxline,
     );
   }
 

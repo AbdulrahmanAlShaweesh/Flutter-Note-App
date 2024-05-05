@@ -1,4 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:note_app/constants/constant_color.dart';
+import 'package:note_app/widgets/custom_bottom.dart';
 import 'package:note_app/widgets/custom_text_field.dart';
 
 class AddNoteShowBottomSheet extends StatelessWidget {
@@ -6,20 +9,27 @@ class AddNoteShowBottomSheet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.symmetric(
-        vertical: 20.0,
+    return Padding(
+      padding: const EdgeInsets.symmetric(
+        vertical: 40.0,
         horizontal: 20.0,
       ),
-      child: Column(
-        children: [
+      child: ListView(
+        children: const [
           CustomTextField(
-            hintText: 'Text',
-            vertical: 10,
+            hintText: 'Title: ',
           ),
           SizedBox(
-            height: 50.0,
+            height: 30.0,
           ),
+          CustomTextField(
+            hintText: 'Contents',
+            maxline: 6,
+          ),
+          SizedBox(
+            height: 40,
+          ),
+          CustomBottom(),
         ],
       ),
     );

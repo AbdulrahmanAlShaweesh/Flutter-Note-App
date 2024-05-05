@@ -22,10 +22,11 @@ class HomeScreen extends StatelessWidget {
           ),
           onPressed: () {
             showModalBottomSheet(
-                context: context,
-                builder: (context) {
-                  return const AddNoteShowBottomSheet();
-                });
+              context: context,
+              builder: (context) {
+                return const AddNoteShowBottomSheet();
+              },
+            );
           },
         ),
       ),
