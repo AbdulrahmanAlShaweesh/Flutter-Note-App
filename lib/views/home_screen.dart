@@ -12,19 +12,22 @@ class HomeScreen extends StatelessWidget {
       body: const SafeArea(
         child: CustomNoteViewBody(),
       ),
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: const Color(0xFF85fdde),
-        child: const Icon(
-          Icons.add,
-          color: Colors.black,
+      floatingActionButton: Padding(
+        padding: const EdgeInsets.only(bottom: 4.0),
+        child: FloatingActionButton(
+          backgroundColor: const Color(0xFF85fdde),
+          child: const Icon(
+            Icons.add,
+            color: Colors.black,
+          ),
+          onPressed: () {
+            showModalBottomSheet(
+                context: context,
+                builder: (context) {
+                  return const AddNoteShowBottomSheet();
+                });
+          },
         ),
-        onPressed: () {
-          showModalBottomSheet(
-              context: context,
-              builder: (context) {
-                return const AddNoteShowBottomSheet();
-              });
-        },
       ),
     );
   }
