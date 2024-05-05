@@ -7,9 +7,17 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: SafeArea(
+    return Scaffold(
+      body: const SafeArea(
         child: CustomNoteViewBody(),
+      ),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Color(0xFF85fdde),
+        child: const Icon(
+          Icons.add,
+          color: Colors.black,
+        ),
+        onPressed: () {},
       ),
     );
   }
