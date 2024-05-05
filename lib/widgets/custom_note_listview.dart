@@ -8,11 +8,15 @@ class CustomNoteListViewBuilder extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      itemCount: 20,
-      itemBuilder: (context, index) {
-        return const NoteItems();
-      },
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(20.0),
+      child: ListView.builder(
+        padding: EdgeInsets.zero,
+        itemCount: 20,
+        itemBuilder: (context, index) {
+          return const NoteItems();
+        },
+      ),
     );
   }
 }
