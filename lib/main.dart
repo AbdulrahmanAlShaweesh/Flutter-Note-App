@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:note_app/constants/constant_keys.dart';
+import 'package:note_app/model/note_model.dart';
 import 'package:note_app/views/edit_note_Screen.dart';
 import 'package:note_app/views/home_screen.dart';
 
@@ -10,6 +11,8 @@ void main() async {
 
   // open box.
   await Hive.openBox(kNoteBox);
+  // register the box
+  Hive.registerAdapter(NoteModelAdapter());
   runApp(
     const FlutterNoteApp(),
   );
