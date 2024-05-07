@@ -11,7 +11,7 @@ class NoteModel extends HiveObject {
   @HiveField(2)
   final String date;
   @HiveField(3)
-  final String color;
+  final int color;
 
   NoteModel({
     required this.title,
@@ -19,13 +19,4 @@ class NoteModel extends HiveObject {
     required this.color,
     required this.date,
   });
-
-  factory NoteModel.fromJson(jsonData) {
-    return NoteModel(
-      title: jsonData['title'],
-      contents: jsonData['content'],
-      date: jsonData['date'],
-      color: jsonData['color'],
-    );
-  }
 }

@@ -10,10 +10,11 @@ import 'package:note_app/views/home_screen.dart';
 import 'package:bloc/bloc.dart';
 
 void main() async {
+  Hive.registerAdapter(NoteModelAdapter());
   Bloc.observer = SimpleBlocObserviser();
   await Hive.initFlutter();
-  await Hive.openBox(kNoteBox);
-  Hive.registerAdapter(NoteModelAdapter());
+  await Hive.openBox<NoteModel>(kNoteBox);
+
   runApp(
     const FlutterNoteApp(),
   );
