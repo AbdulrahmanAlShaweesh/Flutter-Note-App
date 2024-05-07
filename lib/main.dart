@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:note_app/constants/constant_keys.dart';
+import 'package:note_app/cubits/add_notes_cubit/add_notes_cubit.dart';
 import 'package:note_app/model/note_model.dart';
 import 'package:note_app/views/edit_note_Screen.dart';
 import 'package:note_app/views/home_screen.dart';
+import 'package:bloc/bloc.dart';
 
 void main() async {
   // using hive flutter
@@ -23,17 +26,24 @@ class FlutterNoteApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData(
-          brightness: Brightness.dark,
-          scaffoldBackgroundColor: const Color.fromARGB(255, 38, 37, 37),
-          fontFamily: 'Poppins'),
-      debugShowCheckedModeBanner: false,
-      routes: {
-        HomeScreen.id: (context) => const HomeScreen(),
-        EditNoteScreen.id: (context) => const EditNoteScreen(),
-      },
-      initialRoute: HomeScreen.id,
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) => AddNotesCubit(),
+        ),
+      ],
+      child: MaterialApp(
+        theme: ThemeData(
+            brightness: Brightness.dark,
+            scaffoldBackgroundColor: const Color.fromARGB(255, 38, 37, 37),
+            fontFamily: 'Poppins'),
+        debugShowCheckedModeBanner: false,
+        routes: {
+          HomeScreen.id: (context) => const HomeScreen(),
+          EditNoteScreen.id: (context) => const EditNoteScreen(),
+        },
+        initialRoute: HomeScreen.id,
+      ),
     );
   }
 }
