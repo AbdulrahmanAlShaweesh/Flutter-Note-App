@@ -25,24 +25,17 @@ class FlutterNoteApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MultiBlocProvider(
-      providers: [
-        BlocProvider(
-          create: (context) => AddNotesCubit(),
-        ),
-      ],
-      child: MaterialApp(
-        theme: ThemeData(
-            brightness: Brightness.dark,
-            scaffoldBackgroundColor: const Color.fromARGB(255, 38, 37, 37),
-            fontFamily: 'Poppins'),
-        debugShowCheckedModeBanner: false,
-        routes: {
-          HomeScreen.id: (context) => const HomeScreen(),
-          EditNoteScreen.id: (context) => const EditNoteScreen(),
-        },
-        initialRoute: HomeScreen.id,
-      ),
+    return MaterialApp(
+      theme: ThemeData(
+          brightness: Brightness.dark,
+          scaffoldBackgroundColor: const Color.fromARGB(255, 38, 37, 37),
+          fontFamily: 'Poppins'),
+      debugShowCheckedModeBanner: false,
+      routes: {
+        HomeScreen.id: (context) => const HomeScreen(),
+        EditNoteScreen.id: (context) => const EditNoteScreen(),
+      },
+      initialRoute: HomeScreen.id,
     );
   }
 }
