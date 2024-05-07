@@ -22,9 +22,9 @@ class FlutterNoteApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-        brightness: Brightness.dark,
-        scaffoldBackgroundColor: const Color.fromARGB(255, 38, 37, 37),
-      ),
+          brightness: Brightness.dark,
+          scaffoldBackgroundColor: const Color.fromARGB(255, 38, 37, 37),
+          fontFamily: 'Poppins'),
       debugShowCheckedModeBanner: false,
       routes: {
         HomeScreen.id: (context) => const HomeScreen(),
