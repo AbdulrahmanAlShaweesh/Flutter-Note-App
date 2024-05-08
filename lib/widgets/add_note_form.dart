@@ -24,7 +24,7 @@ class _AddNoteFormState extends State<AddNoteForm> {
   Widget build(BuildContext context) {
     return Form(
       key: formKey,
-      child: ListView(
+      child: Column(
         children: [
           CustomTextField(
             onSave: (data) {
