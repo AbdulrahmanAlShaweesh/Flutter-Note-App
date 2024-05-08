@@ -5,9 +5,11 @@ class CustomBottom extends StatelessWidget {
   const CustomBottom({
     super.key,
     required this.onTap,
+    this.isLoading = false,
   });
 
   final void Function()? onTap;
+  final bool isLoading;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -22,14 +24,22 @@ class CustomBottom extends StatelessWidget {
             Radius.circular(10.0),
           ),
         ),
-        child: const Text(
-          'Add',
-          style: TextStyle(
-            color: Colors.black,
-            fontSize: 20.0,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
+        child: isLoading
+            ? const SizedBox(
+                height: 24.0,
+                width: 24.0,
+                child: CircularProgressIndicator(
+                  color: Colors.black,
+                ),
+              )
+            : const Text(
+                'Add',
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 20.0,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
       ),
     );
   }
