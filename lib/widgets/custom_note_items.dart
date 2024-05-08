@@ -42,8 +42,9 @@ class NoteItems extends StatelessWidget {
               size: 30.0,
             ),
           ),
-          const Text(
-            'May 21/2022',
+          Text(
+            notes.date,
+            // 'May 21/2022',
             style: TextStyle(color: Colors.black),
           )
         ],

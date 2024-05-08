@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:intl/intl.dart';
 import 'package:note_app/cubits/add_notes_cubit/add_notes_cubit.dart';
 import 'package:note_app/model/note_model.dart';
 import 'package:note_app/widgets/custom_bottom.dart';
@@ -52,11 +53,15 @@ class _AddNoteFormState extends State<AddNoteForm> {
                 onTap: () {
                   if (formKey.currentState!.validate()) {
                     formKey.currentState!.save();
+                    var currentDate = DateTime.now();
+
+                    var formatedCurrentDate =
+                        DateFormat.yMd().format(currentDate);
                     var noteMode = NoteModel(
                       title: title!,
                       contents: subTitle!,
                       color: Colors.blue.value,
-                      date: DateTime.now().toString(),
+                      date: formatedCurrentDate.toString(),
                     );
 
                     BlocProvider.of<AddNotesCubit>(context).addNote(noteMode);
@@ -72,5 +77,13 @@ class _AddNoteFormState extends State<AddNoteForm> {
         ],
       ),
     );
+  }
+
+  formateMonth({required month}) {
+    if (month == 1) {
+      return 'January';
+    } else if (month == 2) {
+      return 'February';
+    } else if (month == 5) return 'May';
   }
 }
