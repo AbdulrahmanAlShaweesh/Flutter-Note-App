@@ -27,7 +27,9 @@ class CustomNoteListViewBuilder extends StatelessWidget {
                 onTap: () {
                   Navigator.pushNamed(context, EditNoteScreen.id);
                 },
-                child: const NoteItems(),
+                child: NoteItems(
+                  notes: notes[index],
+                ),
               );
             },
           ),
