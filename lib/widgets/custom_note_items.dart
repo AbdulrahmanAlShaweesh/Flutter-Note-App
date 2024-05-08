@@ -36,10 +36,15 @@ class NoteItems extends StatelessWidget {
                 ),
               ),
             ),
-            trailing: const Icon(
-              Icons.delete,
-              color: Colors.black,
-              size: 30.0,
+            trailing: GestureDetector(
+              onTap: () {
+                notes.delete();
+              },
+              child: const Icon(
+                Icons.delete,
+                color: Colors.black,
+                size: 30.0,
+              ),
             ),
           ),
           Text(
