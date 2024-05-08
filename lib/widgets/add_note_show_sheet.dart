@@ -29,7 +29,7 @@ class AddNoteShowBottomSheet extends StatelessWidget {
                   right: 16.0,
                   left: 16.0,
                   bottom: MediaQuery.of(context).viewInsets.bottom),
-              child: SingleChildScrollView(child: const AddNoteForm()),
+              child: const SingleChildScrollView(child: AddNoteForm()),
             ),
           );
         },

@@ -9,18 +9,13 @@ part 'notes_state.dart';
 class NotesCubit extends Cubit<NotesState> {
   NotesCubit() : super(NotesInitial());
 
+  List<NoteModel>? notes;
   fetchAllNotes() {
-    // since the data will come fast and no need of await, then we do not need to 
+    // since the data will come fast and no need of await, then we do not need to
     // emit loading state.
-    emit(NotesLoading());
-    try {
-      var noteBox = Hive.box<NoteModel>(kNoteBox);
+    var notesBox = Hive.box<NoteModel>(kNoteBox);
 
-      List<NoteModel> notes = noteBox.values.toList();
-      // loads notes from hive box
-      emit(NotesSuccess(notes));
-    } catch (e) {
-      emit(NotesFailure(e.toString()));
-    }
+    notes = notesBox.values.toList();
+    // loads notes from hive box
   }
 }
