@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
 import 'package:note_app/cubits/add_notes_cubit/add_notes_cubit.dart';
 import 'package:note_app/model/note_model.dart';
+import 'package:note_app/widgets/colors_listview.dart';
 import 'package:note_app/widgets/custom_bottom.dart';
 import 'package:note_app/widgets/custom_text_field.dart';
 
@@ -46,7 +47,11 @@ class _AddNoteFormState extends State<AddNoteForm> {
             maxline: 5,
           ),
           const SizedBox(
-            height: 40,
+            height: 20,
+          ),
+          const ColorListView(),
+          const SizedBox(
+            height: 30.0,
           ),
           BlocBuilder<AddNotesCubit, AddNotesState>(
             builder: (context, state) {
@@ -80,12 +85,5 @@ class _AddNoteFormState extends State<AddNoteForm> {
       ),
     );
   }
-
-  formateMonth({required month}) {
-    if (month == 1) {
-      return 'January';
-    } else if (month == 2) {
-      return 'February';
-    } else if (month == 5) return 'May';
-  }
 }
+
